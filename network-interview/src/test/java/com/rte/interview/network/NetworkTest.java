@@ -3,6 +3,7 @@ package com.rte.interview.network;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +35,7 @@ class NetworkTest {
         generator4 = new Generator(2000, 2000, 150); // remains 0
         // remains 2350
 
-        network = new Network(Set.of(load1, load2, load3), Set.of(generator1, generator2, generator3, generator4));
+        network = new Network(Set.of(load1, load2, load3), List.of(generator1, generator2, generator3, generator4));
     }
 
     @Test

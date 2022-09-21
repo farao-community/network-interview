@@ -1,5 +1,6 @@
 package com.rte.interview.network;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -9,9 +10,9 @@ import java.util.stream.Stream;
 public class Network {
 
     private final Set<Load> loads;
-    private final Set<Generator> generators;
+    private final List<Generator> generators;
 
-    public Network(Set<Load> loads, Set<Generator> generators) {
+    public Network(Set<Load> loads, List<Generator> generators) {
         this.loads = loads;
         this.generators = generators;
     }
@@ -33,4 +34,14 @@ public class Network {
     void shift(double targetValue) {
 
     }
+
+    /**
+     * Shift method increases power generation on the network. Two steps:
+     *  - First it shifts up generators with merit order until Pmax for each
+     *  - Then, if target value is not reached, it shifts down all the loads proportionally to their current P
+     * @param targetValue: Total injection variation that is targeted.
+     */
+//    void shift(double targetValue) {
+//
+//    }
 }
